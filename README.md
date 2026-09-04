@@ -76,5 +76,5 @@ is redistributed here.
 MIT — see `LICENSE`. This matches the licence of the Corr2Cause repository the underlying data
 comes from. The derived labels are released on the assumption that the repository's licence
 governs the data it generated; if the authors intend different terms for the distributed
-dataset, we will follow them. We have asked them to declare a licence on the dataset card so
-that this is not left to assumption.
+dataset, we will follow them, and we have raised the undeclared dataset-card licence with them
+so that it need not stay an assumption.
