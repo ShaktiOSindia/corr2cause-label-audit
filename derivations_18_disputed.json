@@ -1,0 +1,4860 @@
+{
+  "_what": "Per-item derivations for every disputed Corr2Cause test item (P1 \u00a73.8).",
+  "_method": "Premise re-parsed; equivalence class rebuilt by enumerating acyclic orientations of the independence-derived skeleton; a relation is entailed iff it holds in EVERY member. Shares no equivalence-class code with the solver under test.",
+  "_reproduce": "python export_derivations.py",
+  "_source": "benchmarks/adjudicate_independent_full.py (parse, consistent_dags, holds)",
+  "_data": "causalnlp/corr2cause test split, revision 42ba12c769e11ff6427c9f52d7db58e3f9bf3e53, 1162 rows",
+  "_licence": "MIT, matching the Corr2Cause repository the underlying data comes from.",
+  "disputed_items": 18,
+  "gold_wrong": 18,
+  "by_direction": {
+    "solver says entailed, gold says not": 15,
+    "solver says not entailed, gold says entailed": 3
+  },
+  "by_template": {
+    "has_collider": 4,
+    "parent": 8,
+    "non-child descendant": 2,
+    "non-parent ancestor": 1,
+    "has_confounder": 3
+  },
+  "items": [
+    {
+      "index": 115,
+      "template": "has_collider",
+      "num_variables": 4,
+      "premise_variables": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "stated_correlations": [
+        "A~B",
+        "A~C",
+        "A~D",
+        "B~C",
+        "B~D",
+        "C~D"
+      ],
+      "stated_independencies": [
+        {
+          "x": "C",
+          "y": "D",
+          "given": [
+            "A",
+            "B"
+          ]
+        }
+      ],
+      "hypothesis": "There exists at least one collider (i.e., common effect) of A and B.",
+      "equivalence_class_size": 10,
+      "members": [
+        {
+          "edges": [
+            "A->B",
+            "A->C",
+            "A->D",
+            "B->C",
+            "B->D"
+          ],
+          "hypothesis_holds": true
+        },
+        {
+          "edges": [
+            "A->B",
+            "A->C",
+            "A->D",
+            "B->C",
+            "D->B"
+          ],
+          "hypothesis_holds": true
+        },
+        {
+          "edges": [
+            "A->B",
+            "A->C",
+            "A->D",
+            "B->D",
+            "C->B"
+          ],
+          "hypothesis_holds": true
+        },
+        {
+          "edges": [
+            "A->B",
+            "A->C",
+            "B->C",
+            "D->A",
+            "D->B"
+          ],
+          "hypothesis_holds": true
+        },
+        {
+          "edges": [
+            "A->B",
+            "A->D",
+            "B->D",
+            "C->A",
+            "C->B"
+          ],
+          "hypothesis_holds": true
+        },
+        {
+          "edges": [
+            "A->C",
+            "A->D",
+            "B->A",
+            "B->C",
+            "B->D"
+          ],
+          "hypothesis_holds": true
+        },
+        {
+          "edges": [
+            "A->C",
+            "B->A",
+            "B->C",
+            "B->D",
+            "D->A"
+          ],
+          "hypothesis_holds": true
+        },
+        {
+          "edges": [
+            "A->C",
+            "B->A",
+            "B->C",
+            "D->A",
+            "D->B"
+          ],
+          "hypothesis_holds": true
+        },
+        {
+          "edges": [
+            "A->D",
+            "B->A",
+            "B->C",
+            "B->D",
+            "C->A"
+          ],
+          "hypothesis_holds": true
+        },
+        {
+          "edges": [
+            "A->D",
+            "B->A",
+            "B->D",
+            "C->A",
+            "C->B"
+          ],
+          "hypothesis_holds": true
+        }
+      ],
+      "holds_in": 10,
+      "derived_label": 1,
+      "gold_label": 0,
+      "gold_is_wrong": true,
+      "direction": "gold says not entailed, derivation says entailed"
+    },
+    {
+      "index": 321,
+      "template": "parent",
+      "num_variables": 5,
+      "premise_variables": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E"
+      ],
+      "stated_correlations": [
+        "A~C",
+        "A~D",
+        "A~E",
+        "B~E",
+        "C~D",
+        "C~E",
+        "D~E"
+      ],
+      "stated_independencies": [
+        {
+          "x": "A",
+          "y": "B",
+          "given": []
+        },
+        {
+          "x": "A",
+          "y": "B",
+          "given": [
+            "C"
+          ]
+        },
+        {
+          "x": "A",
+          "y": "B",
+          "given": [
+            "C",
+            "D"
+          ]
+        },
+        {
+          "x": "A",
+          "y": "B",
+          "given": [
+            "D"
+          ]
+        },
+        {
+          "x": "A",
+          "y": "D",
+          "given": [
+            "B",
+            "C"
+          ]
+        },
+        {
+          "x": "A",
+          "y": "D",
+          "given": [
+            "C"
+          ]
+        },
+        {
+          "x": "B",
+          "y": "C",
+          "given": []
+        },
+        {
+          "x": "B",
+          "y": "C",
+          "given": [
+            "A"
+          ]
+        },
+        {
+          "x": "B",
+          "y": "C",
+          "given": [
+            "A",
+            "D"
+          ]
+        },
+        {
+          "x": "B",
+          "y": "C",
+          "given": [
+            "A",
+            "D",
+            "E"
+          ]
+        },
+        {
+          "x": "B",
+          "y": "C",
+          "given": [
+            "D"
+          ]
+        },
+        {
+          "x": "B",
+          "y": "D",
+          "given": []
+        },
+        {
+          "x": "B",
+          "y": "D",
+          "given": [
+            "A"
+          ]
+        },
+        {
+          "x": "B",
+          "y": "D",
+          "given": [
+            "A",
+            "C"
+          ]
+        },
+        {
+          "x": "B",
+          "y": "D",
+          "given": [
+            "C"
+          ]
+        },
+        {
+          "x": "C",
+          "y": "E",
+          "given": [
+            "A",
+            "B",
+            "D"
+          ]
+        },
+        {
+          "x": "C",
+          "y": "E",
+          "given": [
+            "A",
+            "D"
+          ]
+        }
+      ],
+      "hypothesis": "A directly causes E.",
+      "equivalence_class_size": 3,
+      "members": [
+        {
+          "edges": [
+            "A->C",
+            "A->E",
+            "B->E",
+            "C->D",
+            "D->E"
+          ],
+          "hypothesis_holds": true
+        },
+        {
+          "edges": [
+            "A->E",
+            "B->E",
+            "C->A",
+            "C->D",
+            "D->E"
+          ],
+          "hypothesis_holds": true
+        },
+        {
+          "edges": [
+            "A->E",
+            "B->E",
+            "C->A",
+            "D->C",
+            "D->E"
+          ],
+          "hypothesis_holds": true
+        }
+      ],
+      "holds_in": 3,
+      "derived_label": 1,
+      "gold_label": 0,
+      "gold_is_wrong": true,
+      "direction": "gold says not entailed, derivation says entailed"
+    },
+    {
+      "index": 458,
+      "template": "non-child descendant",
+      "num_variables": 5,
+      "premise_variables": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E"
+      ],
+      "stated_correlations": [
+        "A~C",
+        "A~D",
+        "A~E",
+        "B~E",
+        "C~D",
+        "C~E",
+        "D~E"
+      ],
+      "stated_independencies": [
+        {
+          "x": "A",
+          "y": "B",
+          "given": []
+        },
+        {
+          "x": "A",
+          "y": "B",
+          "given": [
+            "C"
+          ]
+        },
+        {
+          "x": "A",
+          "y": "B",
+          "given": [
+            "C",
+            "D"
+          ]
+        },
+        {
+          "x": "A",
+          "y": "B",
+          "given": [
+            "D"
+          ]
+        },
+        {
+          "x": "A",
+          "y": "D",
+          "given": [
+            "B",
+            "C"
+          ]
+        },
+        {
+          "x": "A",
+          "y": "D",
+          "given": [
+            "C"
+          ]
+        },
+        {
+          "x": "B",
+          "y": "C",
+          "given": []
+        },
+        {
+          "x": "B",
+          "y": "C",
+          "given": [
+            "A"
+          ]
+        },
+        {
+          "x": "B",
+          "y": "C",
+          "given": [
+            "A",
+            "D"
+          ]
+        },
+        {
+          "x": "B",
+          "y": "C",
+          "given": [
+            "A",
+            "D",
+            "E"
+          ]
+        },
+        {
+          "x": "B",
+          "y": "C",
+          "given": [
+            "D"
+          ]
+        },
+        {
+          "x": "B",
+          "y": "D",
+          "given": []
+        },
+        {
+          "x": "B",
+          "y": "D",
+          "given": [
+            "A"
+          ]
+        },
+        {
+          "x": "B",
+          "y": "D",
+          "given": [
+            "A",
+            "C"
+          ]
+        },
+        {
+          "x": "B",
+          "y": "D",
+          "given": [
+            "C"
+          ]
+        },
+        {
+          "x": "C",
+          "y": "E",
+          "given": [
+            "A",
+            "B",
+            "D"
+          ]
+        },
+        {
+          "x": "C",
+          "y": "E",
+          "given": [
+            "A",
+            "D"
+          ]
+        }
+      ],
+      "hypothesis": "C is a cause for E, but not a direct one.",
+      "equivalence_class_size": 3,
+      "members": [
+        {
+          "edges": [
+            "A->C",
+            "A->E",
+            "B->E",
+            "C->D",
+            "D->E"
+          ],
+          "hypothesis_holds": true
+        },
+        {
+          "edges": [
+            "A->E",
+            "B->E",
+            "C->A",
+            "C->D",
+            "D->E"
+          ],
+          "hypothesis_holds": true
+        },
+        {
+          "edges": [
+            "A->E",
+            "B->E",
+            "C->A",
+            "D->C",
+            "D->E"
+          ],
+          "hypothesis_holds": true
+        }
+      ],
+      "holds_in": 3,
+      "derived_label": 1,
+      "gold_label": 0,
+      "gold_is_wrong": true,
+      "direction": "gold says not entailed, derivation says entailed"
+    },
+    {
+      "index": 553,
+      "template": "has_collider",
+      "num_variables": 5,
+      "premise_variables": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E"
+      ],
+      "stated_correlations": [
+        "A~B",
+        "A~C",
+        "A~D",
+        "A~E",
+        "B~C",
+        "B~D",
+        "B~E",
+        "C~D",
+        "C~E",
+        "D~E"
+      ],
+      "stated_independencies": [
+        {
+          "x": "C",
+          "y": "E",
+          "given": [
+            "A",
+            "B"
+          ]
+        },
+        {
+          "x": "C",
+          "y": "E",
+          "given": [
+            "A",
+            "B",
+            "D"
+          ]
+        },
+        {
+          "x": "D",
+          "y": "E",
+          "given": [
+            "A",
+            "B"
+          ]
+        },
+        {
+          "x": "D",
+          "y": "E",
+          "given": [
+            "A",
+            "B",
+            "C"
+          ]
+        }
+      ],
+      "hypothesis": "There exists at least one collider (i.e., common effect) of A and B.",
+      "equivalence_class_size": 32,
+      "members": [
+        {
+          "edges": [
+            "A->B",
+            "A->C",
+            "A->D",
+            "A->E",
+            "B->C",
+            "B->D",
+            "B->E",
+            "C->D"
+          ],
+          "hypothesis_holds": true
+        },
+        {
+          "edges": [
+            "A->B",
+            "A->C",
+            "A->D",
+            "A->E",
+            "B->C",
+            "B->D",
+            "B->E",
+            "D->C"
+          ],
+          "hypothesis_holds": true
+        },
+        {
+          "edges": [
+            "A->B",
+            "A->C",
+            "A->D",
+            "A->E",
+            "B->C",
+            "B->D",
+            "C->D",
+            "E->B"
+          ],
+          "hypothesis_holds": true
+        },
+        {
+          "edges": [
+            "A->B",
+            "A->C",
+            "A->D",
+            "A->E",
+            "B->C",
+            "B->D",
+            "D->C",
+            "E->B"
+          ],
+          "hypothesis_holds": true
+        },
+        {
+          "edges": [
+            "A->B",
+            "A->C",
+            "A->D",
+            "A->E",
+            "B->C",
+            "B->E",
+            "D->B",
+            "D->C"
+          ],
+          "hypothesis_holds": true
+        },
+        {
+          "edges": [
+            "A->B",
+            "A->C",
+            "A->D",
+            "A->E",
+            "B->D",
+            "B->E",
+            "C->B",
+            "C->D"
+          ],
+          "hypothesis_holds": true
+        },
+        {
+          "edges": [
+            "A->B",
+            "A->C",
+            "A->D",
+            "A->E",
+            "B->E",
+            "C->B",
+            "C->D",
+            "D->B"
+          ],
+          "hypothesis_holds": true
+        },
+        {
+          "edges": [
+            "A->B",
+            "A->C",
+            "A->D",
+            "A->E",
+            "B->E",
+            "C->B",
+            "D->B",
+            "D->C"
+          ],
+          "hypothesis_holds": true
+        },
+        {
+          "edges": [
+            "A->B",
+            "A->C",
+            "A->D",
+            "B->C",
+            "B->D",
+            "C->D",
+            "E->A",
+            "E->B"
+          ],
+          "hypothesis_holds": true
+        },
+        {
+          "edges": [
+            "A->B",
+            "A->C",
+            "A->D",
+            "B->C",
+            "B->D",
+            "D->C",
+            "E->A",
+            "E->B"
+          ],
+          "hypothesis_holds": true
+        },
+        {
+          "edges": [
+            "A->B",
+            "A->C",
+            "A->E",
+            "B->C",
+            "B->E",
+            "D->A",
+            "D->B",
+            "D->C"
+          ],
+          "hypothesis_holds": true
+        },
+        {
+          "edges": [
+            "A->B",
+            "A->C",
+            "A->E",
+            "B->E",
+            "C->B",
+            "D->A",
+            "D->B",
+            "D->C"
+          ],
+          "hypothesis_holds": true
+        },
+        {
+          "edges": [
+            "A->B",
+            "A->D",
+            "A->E",
+            "B->D",
+            "B->E",
+            "C->A",
+            "C->B",
+            "C->D"
+          ],
+          "hypothesis_holds": true
+        },
+        {
+          "edges": [
+            "A->B",
+            "A->D",
+            "A->E",
+            "B->E",
+            "C->A",
+            "C->B",
+            "C->D",
+            "D->B"
+          ],
+          "hypothesis_holds": true
+        },
+        {
+          "edges": [
+            "A->B",
+            "A->E",
+            "B->E",
+            "C->A",
+            "C->B",
+            "C->D",
+            "D->A",
+            "D->B"
+          ],
+          "hypothesis_holds": true
+        },
+        {
+          "edges": [
+            "A->B",
+            "A->E",
+            "B->E",
+            "C->A",
+            "C->B",
+            "D->A",
+            "D->B",
+            "D->C"
+          ],
+          "hypothesis_holds": true
+        },
+        {
+          "edges": [
+            "A->C",
+            "A->D",
+            "A->E",
+            "B->A",
+            "B->C",
+            "B->D",
+            "B->E",
+            "C->D"
+          ],
+          "hypothesis_holds": true
+        },
+        {
+          "edges": [
+            "A->C",
+            "A->D",
+            "A->E",
+            "B->A",
+            "B->C",
+            "B->D",
+            "B->E",
+            "D->C"
+          ],
+          "hypothesis_holds": true
+        },
+        {
+          "edges": [
+            "A->C",
+            "A->D",
+            "B->A",
+            "B->C",
+            "B->D",
+            "B->E",
+            "C->D",
+            "E->A"
+          ],
+          "hypothesis_holds": true
+        },
+        {
+          "edges": [
+            "A->C",
+            "A->D",
+            "B->A",
+            "B->C",
+            "B->D",
+            "B->E",
+            "D->C",
+            "E->A"
+          ],
+          "hypothesis_holds": true
+        },
+        {
+          "edges": [
+            "A->C",
+            "A->D",
+            "B->A",
+            "B->C",
+            "B->D",
+            "C->D",
+            "E->A",
+            "E->B"
+          ],
+          "hypothesis_holds": true
+        },
+        {
+          "edges": [
+            "A->C",
+            "A->D",
+            "B->A",
+            "B->C",
+            "B->D",
+            "D->C",
+            "E->A",
+            "E->B"
+          ],
+          "hypothesis_holds": true
+        },
+        {
+          "edges": [
+            "A->C",
+            "A->E",
+            "B->A",
+            "B->C",
+            "B->D",
+            "B->E",
+            "D->A",
+            "D->C"
+          ],
+          "hypothesis_holds": true
+        },
+        {
+          "edges": [
+            "A->C",
+            "A->E",
+            "B->A",
+            "B->C",
+            "B->E",
+            "D->A",
+            "D->B",
+            "D->C"
+          ],
+          "hypothesis_holds": true
+        },
+        {
+          "edges": [
+            "A->D",
+            "A->E",
+            "B->A",
+            "B->C",
+            "B->D",
+            "B->E",
+            "C->A",
+            "C->D"
+          ],
+          "hypothesis_holds": true
+        },
+        {
+          "edges": [
+            "A->D",
+            "A->E",
+            "B->A",
+            "B->D",
+            "B->E",
+            "C->A",
+            "C->B",
+            "C->D"
+          ],
+          "hypothesis_holds": true
+        },
+        {
+          "edges": [
+            "A->E",
+            "B->A",
+            "B->C",
+            "B->D",
+            "B->E",
+            "C->A",
+            "C->D",
+            "D->A"
+          ],
+          "hypothesis_holds": true
+        },
+        {
+          "edges": [
+            "A->E",
+            "B->A",
+            "B->C",
+            "B->D",
+            "B->E",
+            "C->A",
+            "D->A",
+            "D->C"
+          ],
+          "hypothesis_holds": true
+        },
+        {
+          "edges": [
+            "A->E",
+            "B->A",
+            "B->C",
+            "B->E",
+            "C->A",
+            "D->A",
+            "D->B",
+            "D->C"
+          ],
+          "hypothesis_holds": true
+        },
+        {
+          "edges": [
+            "A->E",
+            "B->A",
+            "B->D",
+            "B->E",
+            "C->A",
+            "C->B",
+            "C->D",
+            "D->A"
+          ],
+          "hypothesis_holds": true
+        },
+        {
+          "edges": [
+            "A->E",
+            "B->A",
+            "B->E",
+            "C->A",
+            "C->B",
+            "C->D",
+            "D->A",
+            "D->B"
+          ],
+          "hypothesis_holds": true
+        },
+        {
+          "edges": [
+            "A->E",
+            "B->A",
+            "B->E",
+            "C->A",
+            "C->B",
+            "D->A",
+            "D->B",
+            "D->C"
+          ],
+          "hypothesis_holds": true
+        }
+      ],
+      "holds_in": 32,
+      "derived_label": 1,
+      "gold_label": 0,
+      "gold_is_wrong": true,
+      "direction": "gold says not entailed, derivation says entailed"
+    },
+    {
+      "index": 631,
+      "template": "has_collider",
+      "num_variables": 5,
+      "premise_variables": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E"
+      ],
+      "stated_correlations": [
+        "A~B",
+        "A~C",
+        "A~D",
+        "A~E",
+        "B~C",
+        "B~D",
+        "B~E",
+        "C~D",
+        "C~E",
+        "D~E"
+      ],
+      "stated_independencies": [
+        {
+          "x": "B",
+          "y": "E",
+          "given": [
+            "A"
+          ]
+        },
+        {
+          "x": "B",
+          "y": "E",
+          "given": [
+            "A",
+            "C"
+          ]
+        },
+        {
+          "x": "B",
+          "y": "E",
+          "given": [
+            "A",
+            "C",
+            "D"
+          ]
+        },
+        {
+          "x": "B",
+          "y": "E",
+          "given": [
+            "A",
+            "D"
+          ]
+        },
+        {
+          "x": "C",
+          "y": "D",
+          "given": [
+            "A",
+            "B"
+          ]
+        },
+        {
+          "x": "C",
+          "y": "D",
+          "given": [
+            "A",
+            "B",
+            "E"
+          ]
+        },
+        {
+          "x": "C",
+          "y": "E",
+          "given": [
+            "A"
+          ]
+        },
+        {
+          "x": "C",
+          "y": "E",
+          "given": [
+            "A",
+            "B"
+          ]
+        },
+        {
+          "x": "C",
+          "y": "E",
+          "given": [
+            "A",
+            "B",
+            "D"
+          ]
+        },
+        {
+          "x": "C",
+          "y": "E",
+          "given": [
+            "A",
+            "D"
+          ]
+        },
+        {
+          "x": "D",
+          "y": "E",
+          "given": [
+            "A"
+          ]
+        },
+        {
+          "x": "D",
+          "y": "E",
+          "given": [
+            "A",
+            "B"
+          ]
+        },
+        {
+          "x": "D",
+          "y": "E",
+          "given": [
+            "A",
+            "B",
+            "C"
+          ]
+        },
+        {
+          "x": "D",
+          "y": "E",
+          "given": [
+            "A",
+            "C"
+          ]
+        }
+      ],
+      "hypothesis": "There exists at least one collider (i.e., common effect) of A and B.",
+      "equivalence_class_size": 13,
+      "members": [
+        {
+          "edges": [
+            "A->B",
+            "A->C",
+            "A->D",
+            "A->E",
+            "B->C",
+            "B->D"
+          ],
+          "hypothesis_holds": true
+        },
+        {
+          "edges": [
+            "A->B",
+            "A->C",
+            "A->D",
+            "A->E",
+            "B->C",
+            "D->B"
+          ],
+          "hypothesis_holds": true
+        },
+        {
+          "edges": [
+            "A->B",
+            "A->C",
+            "A->D",
+            "A->E",
+            "B->D",
+            "C->B"
+          ],
+          "hypothesis_holds": true
+        },
+        {
+          "edges": [
+            "A->B",
+            "A->C",
+            "A->D",
+            "B->C",
+            "B->D",
+            "E->A"
+          ],
+          "hypothesis_holds": true
+        },
+        {
+          "edges": [
+            "A->B",
+            "A->C",
+            "A->D",
+            "B->C",
+            "D->B",
+            "E->A"
+          ],
+          "hypothesis_holds": true
+        },
+        {
+          "edges": [
+            "A->B",
+            "A->C",
+            "A->D",
+            "B->D",
+            "C->B",
+            "E->A"
+          ],
+          "hypothesis_holds": true
+        },
+        {
+          "edges": [
+            "A->B",
+            "A->C",
+            "A->E",
+            "B->C",
+            "D->A",
+            "D->B"
+          ],
+          "hypothesis_holds": true
+        },
+        {
+          "edges": [
+            "A->B",
+            "A->D",
+            "A->E",
+            "B->D",
+            "C->A",
+            "C->B"
+          ],
+          "hypothesis_holds": true
+        },
+        {
+          "edges": [
+            "A->C",
+            "A->D",
+            "A->E",
+            "B->A",
+            "B->C",
+            "B->D"
+          ],
+          "hypothesis_holds": true
+        },
+        {
+          "edges": [
+            "A->C",
+            "A->E",
+            "B->A",
+            "B->C",
+            "B->D",
+            "D->A"
+          ],
+          "hypothesis_holds": true
+        },
+        {
+          "edges": [
+            "A->C",
+            "A->E",
+            "B->A",
+            "B->C",
+            "D->A",
+            "D->B"
+          ],
+          "hypothesis_holds": true
+        },
+        {
+          "edges": [
+            "A->D",
+            "A->E",
+            "B->A",
+            "B->C",
+            "B->D",
+            "C->A"
+          ],
+          "hypothesis_holds": true
+        },
+        {
+          "edges": [
+            "A->D",
+            "A->E",
+            "B->A",
+            "B->D",
+            "C->A",
+            "C->B"
+          ],
+          "hypothesis_holds": true
+        }
+      ],
+      "holds_in": 13,
+      "derived_label": 1,
+      "gold_label": 0,
+      "gold_is_wrong": true,
+      "direction": "gold says not entailed, derivation says entailed"
+    },
+    {
+      "index": 705,
+      "template": "parent",
+      "num_variables": 6,
+      "premise_variables": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F"
+      ],
+      "stated_correlations": [
+        "A~D",
+        "A~E",
+        "A~F",
+        "B~E",
+        "B~F",
+        "C~E",
+        "C~F",
+        "D~E",
+        "D~F",
+        "E~F"
+      ],
+      "stated_independencies": [
+        {
+          "x": "A",
+          "y": "B",
+          "given": []
+        },
+        {
+          "x": "A",
+          "y": "B",
+          "given": [
+            "C"
+          ]
+        },
+        {
+          "x": "A",
+          "y": "B",
+          "given": [
+            "C",
+            "D"
+          ]
+        },
+        {
+          "x": "A",
+          "y": "B",
+          "given": [
+            "D"
+          ]
+        },
+        {
+          "x": "A",
+          "y": "C",
+          "given": []
+        },
+        {
+          "x": "A",
+          "y": "C",
+          "given": [
+            "B"
+          ]
+        },
+        {
+          "x": "A",
+          "y": "C",
+          "given": [
+            "B",
+            "D"
+          ]
+        },
+        {
+          "x": "A",
+          "y": "C",
+          "given": [
+            "D"
+          ]
+        },
+        {
+          "x": "B",
+          "y": "C",
+          "given": []
+        },
+        {
+          "x": "B",
+          "y": "C",
+          "given": [
+            "A"
+          ]
+        },
+        {
+          "x": "B",
+          "y": "C",
+          "given": [
+            "A",
+            "D"
+          ]
+        },
+        {
+          "x": "B",
+          "y": "C",
+          "given": [
+            "D"
+          ]
+        },
+        {
+          "x": "B",
+          "y": "D",
+          "given": []
+        },
+        {
+          "x": "B",
+          "y": "D",
+          "given": [
+            "A"
+          ]
+        },
+        {
+          "x": "B",
+          "y": "D",
+          "given": [
+            "A",
+            "C"
+          ]
+        },
+        {
+          "x": "B",
+          "y": "D",
+          "given": [
+            "C"
+          ]
+        },
+        {
+          "x": "C",
+          "y": "D",
+          "given": []
+        },
+        {
+          "x": "C",
+          "y": "D",
+          "given": [
+            "A"
+          ]
+        },
+        {
+          "x": "C",
+          "y": "D",
+          "given": [
+            "A",
+            "B"
+          ]
+        },
+        {
+          "x": "C",
+          "y": "D",
+          "given": [
+            "B"
+          ]
+        },
+        {
+          "x": "D",
+          "y": "F",
+          "given": [
+            "A",
+            "B",
+            "C",
+            "E"
+          ]
+        }
+      ],
+      "hypothesis": "B directly causes F.",
+      "equivalence_class_size": 2,
+      "members": [
+        {
+          "edges": [
+            "A->D",
+            "A->E",
+            "A->F",
+            "B->E",
+            "B->F",
+            "C->E",
+            "C->F",
+            "D->E",
+            "E->F"
+          ],
+          "hypothesis_holds": true
+        },
+        {
+          "edges": [
+            "A->E",
+            "A->F",
+            "B->E",
+            "B->F",
+            "C->E",
+            "C->F",
+            "D->A",
+            "D->E",
+            "E->F"
+          ],
+          "hypothesis_holds": true
+        }
+      ],
+      "holds_in": 2,
+      "derived_label": 1,
+      "gold_label": 0,
+      "gold_is_wrong": true,
+      "direction": "gold says not entailed, derivation says entailed"
+    },
+    {
+      "index": 731,
+      "template": "parent",
+      "num_variables": 6,
+      "premise_variables": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F"
+      ],
+      "stated_correlations": [
+        "A~B",
+        "A~C",
+        "A~D",
+        "A~E",
+        "A~F",
+        "B~C",
+        "B~D",
+        "B~E",
+        "B~F",
+        "C~D",
+        "C~E",
+        "C~F",
+        "D~E",
+        "D~F",
+        "E~F"
+      ],
+      "stated_independencies": [
+        {
+          "x": "A",
+          "y": "C",
+          "given": [
+            "B"
+          ]
+        },
+        {
+          "x": "A",
+          "y": "C",
+          "given": [
+            "B",
+            "D"
+          ]
+        },
+        {
+          "x": "B",
+          "y": "D",
+          "given": [
+            "A"
+          ]
+        },
+        {
+          "x": "B",
+          "y": "D",
+          "given": [
+            "A",
+            "C"
+          ]
+        },
+        {
+          "x": "B",
+          "y": "D",
+          "given": [
+            "A",
+            "C",
+            "E"
+          ]
+        },
+        {
+          "x": "B",
+          "y": "D",
+          "given": [
+            "A",
+            "C",
+            "E",
+            "F"
+          ]
+        },
+        {
+          "x": "B",
+          "y": "D",
+          "given": [
+            "A",
+            "C",
+            "F"
+          ]
+        },
+        {
+          "x": "B",
+          "y": "D",
+          "given": [
+            "A",
+            "F"
+          ]
+        },
+        {
+          "x": "B",
+          "y": "E",
+          "given": [
+            "A",
+            "C"
+          ]
+        },
+        {
+          "x": "B",
+          "y": "E",
+          "given": [
+            "A",
+            "C",
+            "D"
+          ]
+        },
+        {
+          "x": "B",
+          "y": "E",
+          "given": [
+            "A",
+            "C",
+            "D",
+            "F"
+          ]
+        },
+        {
+          "x": "B",
+          "y": "E",
+          "given": [
+            "A",
+            "C",
+            "F"
+          ]
+        },
+        {
+          "x": "B",
+          "y": "F",
+          "given": [
+            "A",
+            "C"
+          ]
+        },
+        {
+          "x": "B",
+          "y": "F",
+          "given": [
+            "A",
+            "C",
+            "D"
+          ]
+        },
+        {
+          "x": "B",
+          "y": "F",
+          "given": [
+            "A",
+            "C",
+            "D",
+            "E"
+          ]
+        },
+        {
+          "x": "B",
+          "y": "F",
+          "given": [
+            "A",
+            "C",
+            "E"
+          ]
+        },
+        {
+          "x": "C",
+          "y": "D",
+          "given": [
+            "A"
+          ]
+        },
+        {
+          "x": "C",
+          "y": "D",
+          "given": [
+            "A",
+            "B"
+          ]
+        },
+        {
+          "x": "C",
+          "y": "D",
+          "given": [
+            "A",
+            "B",
+            "F"
+          ]
+        },
+        {
+          "x": "C",
+          "y": "D",
+          "given": [
+            "A",
+            "F"
+          ]
+        },
+        {
+          "x": "C",
+          "y": "D",
+          "given": [
+            "B"
+          ]
+        },
+        {
+          "x": "D",
+          "y": "F",
+          "given": [
+            "A"
+          ]
+        },
+        {
+          "x": "D",
+          "y": "F",
+          "given": [
+            "A",
+            "B"
+          ]
+        },
+        {
+          "x": "D",
+          "y": "F",
+          "given": [
+            "A",
+            "B",
+            "C"
+          ]
+        },
+        {
+          "x": "D",
+          "y": "F",
+          "given": [
+            "A",
+            "B",
+            "C",
+            "E"
+          ]
+        },
+        {
+          "x": "D",
+          "y": "F",
+          "given": [
+            "A",
+            "C"
+          ]
+        },
+        {
+          "x": "D",
+          "y": "F",
+          "given": [
+            "A",
+            "C",
+            "E"
+          ]
+        },
+        {
+          "x": "E",
+          "y": "F",
+          "given": [
+            "A",
+            "B",
+            "C"
+          ]
+        },
+        {
+          "x": "E",
+          "y": "F",
+          "given": [
+            "A",
+            "B",
+            "C",
+            "D"
+          ]
+        },
+        {
+          "x": "E",
+          "y": "F",
+          "given": [
+            "A",
+            "C"
+          ]
+        },
+        {
+          "x": "E",
+          "y": "F",
+          "given": [
+            "A",
+            "C",
+            "D"
+          ]
+        }
+      ],
+      "hypothesis": "D directly causes E.",
+      "equivalence_class_size": 4,
+      "members": [
+        {
+          "edges": [
+            "A->B",
+            "A->D",
+            "A->E",
+            "A->F",
+            "B->C",
+            "C->E",
+            "C->F",
+            "D->E"
+          ],
+          "hypothesis_holds": true
+        },
+        {
+          "edges": [
+            "A->B",
+            "A->E",
+            "A->F",
+            "B->C",
+            "C->E",
+            "C->F",
+            "D->A",
+            "D->E"
+          ],
+          "hypothesis_holds": true
+        },
+        {
+          "edges": [
+            "A->D",
+            "A->E",
+            "A->F",
+            "B->A",
+            "B->C",
+            "C->E",
+            "C->F",
+            "D->E"
+          ],
+          "hypothesis_holds": true
+        },
+        {
+          "edges": [
+            "A->D",
+            "A->E",
+            "A->F",
+            "B->A",
+            "C->B",
+            "C->E",
+            "C->F",
+            "D->E"
+          ],
+          "hypothesis_holds": true
+        }
+      ],
+      "holds_in": 4,
+      "derived_label": 1,
+      "gold_label": 0,
+      "gold_is_wrong": true,
+      "direction": "gold says not entailed, derivation says entailed"
+    },
+    {
+      "index": 779,
+      "template": "parent",
+      "num_variables": 6,
+      "premise_variables": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F"
+      ],
+      "stated_correlations": [
+        "A~D",
+        "A~E",
+        "A~F",
+        "B~C",
+        "B~D",
+        "B~F",
+        "C~D",
+        "C~F",
+        "D~E",
+        "D~F",
+        "E~F"
+      ],
+      "stated_independencies": [
+        {
+          "x": "A",
+          "y": "B",
+          "given": []
+        },
+        {
+          "x": "A",
+          "y": "B",
+          "given": [
+            "C"
+          ]
+        },
+        {
+          "x": "A",
+          "y": "B",
+          "given": [
+            "C",
+            "E"
+          ]
+        },
+        {
+          "x": "A",
+          "y": "B",
+          "given": [
+            "E"
+          ]
+        },
+        {
+          "x": "A",
+          "y": "C",
+          "given": []
+        },
+        {
+          "x": "A",
+          "y": "C",
+          "given": [
+            "B"
+          ]
+        },
+        {
+          "x": "A",
+          "y": "C",
+          "given": [
+            "B",
+            "E"
+          ]
+        },
+        {
+          "x": "A",
+          "y": "C",
+          "given": [
+            "E"
+          ]
+        },
+        {
+          "x": "B",
+          "y": "E",
+          "given": []
+        },
+        {
+          "x": "B",
+          "y": "E",
+          "given": [
+            "A"
+          ]
+        },
+        {
+          "x": "B",
+          "y": "E",
+          "given": [
+            "A",
+            "C"
+          ]
+        },
+        {
+          "x": "B",
+          "y": "E",
+          "given": [
+            "A",
+            "C",
+            "D"
+          ]
+        },
+        {
+          "x": "B",
+          "y": "E",
+          "given": [
+            "A",
+            "D"
+          ]
+        },
+        {
+          "x": "B",
+          "y": "E",
+          "given": [
+            "C"
+          ]
+        },
+        {
+          "x": "C",
+          "y": "E",
+          "given": []
+        },
+        {
+          "x": "C",
+          "y": "E",
+          "given": [
+            "A"
+          ]
+        },
+        {
+          "x": "C",
+          "y": "E",
+          "given": [
+            "A",
+            "B"
+          ]
+        },
+        {
+          "x": "C",
+          "y": "E",
+          "given": [
+            "A",
+            "B",
+            "D"
+          ]
+        },
+        {
+          "x": "C",
+          "y": "E",
+          "given": [
+            "A",
+            "D"
+          ]
+        },
+        {
+          "x": "C",
+          "y": "E",
+          "given": [
+            "B"
+          ]
+        },
+        {
+          "x": "D",
+          "y": "E",
+          "given": [
+            "A"
+          ]
+        },
+        {
+          "x": "D",
+          "y": "E",
+          "given": [
+            "A",
+            "B"
+          ]
+        },
+        {
+          "x": "D",
+          "y": "E",
+          "given": [
+            "A",
+            "B",
+            "C"
+          ]
+        },
+        {
+          "x": "D",
+          "y": "E",
+          "given": [
+            "A",
+            "C"
+          ]
+        }
+      ],
+      "hypothesis": "C directly causes D.",
+      "equivalence_class_size": 4,
+      "members": [
+        {
+          "edges": [
+            "A->D",
+            "A->E",
+            "A->F",
+            "B->C",
+            "B->D",
+            "B->F",
+            "C->D",
+            "C->F",
+            "D->F",
+            "E->F"
+          ],
+          "hypothesis_holds": true
+        },
+        {
+          "edges": [
+            "A->D",
+            "A->E",
+            "A->F",
+            "B->D",
+            "B->F",
+            "C->B",
+            "C->D",
+            "C->F",
+            "D->F",
+            "E->F"
+          ],
+          "hypothesis_holds": true
+        },
+        {
+          "edges": [
+            "A->D",
+            "A->F",
+            "B->C",
+            "B->D",
+            "B->F",
+            "C->D",
+            "C->F",
+            "D->F",
+            "E->A",
+            "E->F"
+          ],
+          "hypothesis_holds": true
+        },
+        {
+          "edges": [
+            "A->D",
+            "A->F",
+            "B->D",
+            "B->F",
+            "C->B",
+            "C->D",
+            "C->F",
+            "D->F",
+            "E->A",
+            "E->F"
+          ],
+          "hypothesis_holds": true
+        }
+      ],
+      "holds_in": 4,
+      "derived_label": 1,
+      "gold_label": 0,
+      "gold_is_wrong": true,
+      "direction": "gold says not entailed, derivation says entailed"
+    },
+    {
+      "index": 788,
+      "template": "non-parent ancestor",
+      "num_variables": 6,
+      "premise_variables": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F"
+      ],
+      "stated_correlations": [
+        "A~D",
+        "A~E",
+        "A~F",
+        "B~C",
+        "B~D",
+        "B~F",
+        "C~D",
+        "C~F",
+        "D~E",
+        "D~F",
+        "E~F"
+      ],
+      "stated_independencies": [
+        {
+          "x": "A",
+          "y": "B",
+          "given": []
+        },
+        {
+          "x": "A",
+          "y": "B",
+          "given": [
+            "C"
+          ]
+        },
+        {
+          "x": "A",
+          "y": "B",
+          "given": [
+            "C",
+            "E"
+          ]
+        },
+        {
+          "x": "A",
+          "y": "B",
+          "given": [
+            "E"
+          ]
+        },
+        {
+          "x": "A",
+          "y": "C",
+          "given": []
+        },
+        {
+          "x": "A",
+          "y": "C",
+          "given": [
+            "B"
+          ]
+        },
+        {
+          "x": "A",
+          "y": "C",
+          "given": [
+            "B",
+            "E"
+          ]
+        },
+        {
+          "x": "A",
+          "y": "C",
+          "given": [
+            "E"
+          ]
+        },
+        {
+          "x": "B",
+          "y": "E",
+          "given": []
+        },
+        {
+          "x": "B",
+          "y": "E",
+          "given": [
+            "A"
+          ]
+        },
+        {
+          "x": "B",
+          "y": "E",
+          "given": [
+            "A",
+            "C"
+          ]
+        },
+        {
+          "x": "B",
+          "y": "E",
+          "given": [
+            "A",
+            "C",
+            "D"
+          ]
+        },
+        {
+          "x": "B",
+          "y": "E",
+          "given": [
+            "A",
+            "D"
+          ]
+        },
+        {
+          "x": "B",
+          "y": "E",
+          "given": [
+            "C"
+          ]
+        },
+        {
+          "x": "C",
+          "y": "E",
+          "given": []
+        },
+        {
+          "x": "C",
+          "y": "E",
+          "given": [
+            "A"
+          ]
+        },
+        {
+          "x": "C",
+          "y": "E",
+          "given": [
+            "A",
+            "B"
+          ]
+        },
+        {
+          "x": "C",
+          "y": "E",
+          "given": [
+            "A",
+            "B",
+            "D"
+          ]
+        },
+        {
+          "x": "C",
+          "y": "E",
+          "given": [
+            "A",
+            "D"
+          ]
+        },
+        {
+          "x": "C",
+          "y": "E",
+          "given": [
+            "B"
+          ]
+        },
+        {
+          "x": "D",
+          "y": "E",
+          "given": [
+            "A"
+          ]
+        },
+        {
+          "x": "D",
+          "y": "E",
+          "given": [
+            "A",
+            "B"
+          ]
+        },
+        {
+          "x": "D",
+          "y": "E",
+          "given": [
+            "A",
+            "B",
+            "C"
+          ]
+        },
+        {
+          "x": "D",
+          "y": "E",
+          "given": [
+            "A",
+            "C"
+          ]
+        }
+      ],
+      "hypothesis": "C causes something else which causes F.",
+      "equivalence_class_size": 4,
+      "members": [
+        {
+          "edges": [
+            "A->D",
+            "A->E",
+            "A->F",
+            "B->C",
+            "B->D",
+            "B->F",
+            "C->D",
+            "C->F",
+            "D->F",
+            "E->F"
+          ],
+          "hypothesis_holds": true
+        },
+        {
+          "edges": [
+            "A->D",
+            "A->E",
+            "A->F",
+            "B->D",
+            "B->F",
+            "C->B",
+            "C->D",
+            "C->F",
+            "D->F",
+            "E->F"
+          ],
+          "hypothesis_holds": true
+        },
+        {
+          "edges": [
+            "A->D",
+            "A->F",
+            "B->C",
+            "B->D",
+            "B->F",
+            "C->D",
+            "C->F",
+            "D->F",
+            "E->A",
+            "E->F"
+          ],
+          "hypothesis_holds": true
+        },
+        {
+          "edges": [
+            "A->D",
+            "A->F",
+            "B->D",
+            "B->F",
+            "C->B",
+            "C->D",
+            "C->F",
+            "D->F",
+            "E->A",
+            "E->F"
+          ],
+          "hypothesis_holds": true
+        }
+      ],
+      "holds_in": 4,
+      "derived_label": 1,
+      "gold_label": 0,
+      "gold_is_wrong": true,
+      "direction": "gold says not entailed, derivation says entailed"
+    },
+    {
+      "index": 794,
+      "template": "parent",
+      "num_variables": 6,
+      "premise_variables": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F"
+      ],
+      "stated_correlations": [
+        "A~D",
+        "A~E",
+        "A~F",
+        "B~C",
+        "B~D",
+        "B~F",
+        "C~D",
+        "C~F",
+        "D~E",
+        "D~F",
+        "E~F"
+      ],
+      "stated_independencies": [
+        {
+          "x": "A",
+          "y": "B",
+          "given": []
+        },
+        {
+          "x": "A",
+          "y": "B",
+          "given": [
+            "C"
+          ]
+        },
+        {
+          "x": "A",
+          "y": "B",
+          "given": [
+            "C",
+            "E"
+          ]
+        },
+        {
+          "x": "A",
+          "y": "B",
+          "given": [
+            "E"
+          ]
+        },
+        {
+          "x": "A",
+          "y": "C",
+          "given": []
+        },
+        {
+          "x": "A",
+          "y": "C",
+          "given": [
+            "B"
+          ]
+        },
+        {
+          "x": "A",
+          "y": "C",
+          "given": [
+            "B",
+            "E"
+          ]
+        },
+        {
+          "x": "A",
+          "y": "C",
+          "given": [
+            "E"
+          ]
+        },
+        {
+          "x": "B",
+          "y": "E",
+          "given": []
+        },
+        {
+          "x": "B",
+          "y": "E",
+          "given": [
+            "A"
+          ]
+        },
+        {
+          "x": "B",
+          "y": "E",
+          "given": [
+            "A",
+            "C"
+          ]
+        },
+        {
+          "x": "B",
+          "y": "E",
+          "given": [
+            "A",
+            "C",
+            "D"
+          ]
+        },
+        {
+          "x": "B",
+          "y": "E",
+          "given": [
+            "A",
+            "D"
+          ]
+        },
+        {
+          "x": "B",
+          "y": "E",
+          "given": [
+            "C"
+          ]
+        },
+        {
+          "x": "C",
+          "y": "E",
+          "given": []
+        },
+        {
+          "x": "C",
+          "y": "E",
+          "given": [
+            "A"
+          ]
+        },
+        {
+          "x": "C",
+          "y": "E",
+          "given": [
+            "A",
+            "B"
+          ]
+        },
+        {
+          "x": "C",
+          "y": "E",
+          "given": [
+            "A",
+            "B",
+            "D"
+          ]
+        },
+        {
+          "x": "C",
+          "y": "E",
+          "given": [
+            "A",
+            "D"
+          ]
+        },
+        {
+          "x": "C",
+          "y": "E",
+          "given": [
+            "B"
+          ]
+        },
+        {
+          "x": "D",
+          "y": "E",
+          "given": [
+            "A"
+          ]
+        },
+        {
+          "x": "D",
+          "y": "E",
+          "given": [
+            "A",
+            "B"
+          ]
+        },
+        {
+          "x": "D",
+          "y": "E",
+          "given": [
+            "A",
+            "B",
+            "C"
+          ]
+        },
+        {
+          "x": "D",
+          "y": "E",
+          "given": [
+            "A",
+            "C"
+          ]
+        }
+      ],
+      "hypothesis": "A directly causes D.",
+      "equivalence_class_size": 4,
+      "members": [
+        {
+          "edges": [
+            "A->D",
+            "A->E",
+            "A->F",
+            "B->C",
+            "B->D",
+            "B->F",
+            "C->D",
+            "C->F",
+            "D->F",
+            "E->F"
+          ],
+          "hypothesis_holds": true
+        },
+        {
+          "edges": [
+            "A->D",
+            "A->E",
+            "A->F",
+            "B->D",
+            "B->F",
+            "C->B",
+            "C->D",
+            "C->F",
+            "D->F",
+            "E->F"
+          ],
+          "hypothesis_holds": true
+        },
+        {
+          "edges": [
+            "A->D",
+            "A->F",
+            "B->C",
+            "B->D",
+            "B->F",
+            "C->D",
+            "C->F",
+            "D->F",
+            "E->A",
+            "E->F"
+          ],
+          "hypothesis_holds": true
+        },
+        {
+          "edges": [
+            "A->D",
+            "A->F",
+            "B->D",
+            "B->F",
+            "C->B",
+            "C->D",
+            "C->F",
+            "D->F",
+            "E->A",
+            "E->F"
+          ],
+          "hypothesis_holds": true
+        }
+      ],
+      "holds_in": 4,
+      "derived_label": 1,
+      "gold_label": 0,
+      "gold_is_wrong": true,
+      "direction": "gold says not entailed, derivation says entailed"
+    },
+    {
+      "index": 810,
+      "template": "parent",
+      "num_variables": 6,
+      "premise_variables": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F"
+      ],
+      "stated_correlations": [
+        "A~D",
+        "A~E",
+        "A~F",
+        "B~C",
+        "B~D",
+        "B~F",
+        "C~D",
+        "C~F",
+        "D~E",
+        "D~F",
+        "E~F"
+      ],
+      "stated_independencies": [
+        {
+          "x": "A",
+          "y": "B",
+          "given": []
+        },
+        {
+          "x": "A",
+          "y": "B",
+          "given": [
+            "C"
+          ]
+        },
+        {
+          "x": "A",
+          "y": "B",
+          "given": [
+            "C",
+            "E"
+          ]
+        },
+        {
+          "x": "A",
+          "y": "B",
+          "given": [
+            "E"
+          ]
+        },
+        {
+          "x": "A",
+          "y": "C",
+          "given": []
+        },
+        {
+          "x": "A",
+          "y": "C",
+          "given": [
+            "B"
+          ]
+        },
+        {
+          "x": "A",
+          "y": "C",
+          "given": [
+            "B",
+            "E"
+          ]
+        },
+        {
+          "x": "A",
+          "y": "C",
+          "given": [
+            "E"
+          ]
+        },
+        {
+          "x": "B",
+          "y": "E",
+          "given": []
+        },
+        {
+          "x": "B",
+          "y": "E",
+          "given": [
+            "A"
+          ]
+        },
+        {
+          "x": "B",
+          "y": "E",
+          "given": [
+            "A",
+            "C"
+          ]
+        },
+        {
+          "x": "B",
+          "y": "E",
+          "given": [
+            "A",
+            "C",
+            "D"
+          ]
+        },
+        {
+          "x": "B",
+          "y": "E",
+          "given": [
+            "A",
+            "D"
+          ]
+        },
+        {
+          "x": "B",
+          "y": "E",
+          "given": [
+            "C"
+          ]
+        },
+        {
+          "x": "C",
+          "y": "E",
+          "given": []
+        },
+        {
+          "x": "C",
+          "y": "E",
+          "given": [
+            "A"
+          ]
+        },
+        {
+          "x": "C",
+          "y": "E",
+          "given": [
+            "A",
+            "B"
+          ]
+        },
+        {
+          "x": "C",
+          "y": "E",
+          "given": [
+            "A",
+            "B",
+            "D"
+          ]
+        },
+        {
+          "x": "C",
+          "y": "E",
+          "given": [
+            "A",
+            "D"
+          ]
+        },
+        {
+          "x": "C",
+          "y": "E",
+          "given": [
+            "B"
+          ]
+        },
+        {
+          "x": "D",
+          "y": "E",
+          "given": [
+            "A"
+          ]
+        },
+        {
+          "x": "D",
+          "y": "E",
+          "given": [
+            "A",
+            "B"
+          ]
+        },
+        {
+          "x": "D",
+          "y": "E",
+          "given": [
+            "A",
+            "B",
+            "C"
+          ]
+        },
+        {
+          "x": "D",
+          "y": "E",
+          "given": [
+            "A",
+            "C"
+          ]
+        }
+      ],
+      "hypothesis": "B directly causes D.",
+      "equivalence_class_size": 4,
+      "members": [
+        {
+          "edges": [
+            "A->D",
+            "A->E",
+            "A->F",
+            "B->C",
+            "B->D",
+            "B->F",
+            "C->D",
+            "C->F",
+            "D->F",
+            "E->F"
+          ],
+          "hypothesis_holds": true
+        },
+        {
+          "edges": [
+            "A->D",
+            "A->E",
+            "A->F",
+            "B->D",
+            "B->F",
+            "C->B",
+            "C->D",
+            "C->F",
+            "D->F",
+            "E->F"
+          ],
+          "hypothesis_holds": true
+        },
+        {
+          "edges": [
+            "A->D",
+            "A->F",
+            "B->C",
+            "B->D",
+            "B->F",
+            "C->D",
+            "C->F",
+            "D->F",
+            "E->A",
+            "E->F"
+          ],
+          "hypothesis_holds": true
+        },
+        {
+          "edges": [
+            "A->D",
+            "A->F",
+            "B->D",
+            "B->F",
+            "C->B",
+            "C->D",
+            "C->F",
+            "D->F",
+            "E->A",
+            "E->F"
+          ],
+          "hypothesis_holds": true
+        }
+      ],
+      "holds_in": 4,
+      "derived_label": 1,
+      "gold_label": 0,
+      "gold_is_wrong": true,
+      "direction": "gold says not entailed, derivation says entailed"
+    },
+    {
+      "index": 869,
+      "template": "non-child descendant",
+      "num_variables": 6,
+      "premise_variables": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F"
+      ],
+      "stated_correlations": [
+        "A~B",
+        "A~C",
+        "A~D",
+        "A~E",
+        "A~F",
+        "B~C",
+        "B~D",
+        "B~E",
+        "B~F",
+        "C~D",
+        "C~E",
+        "C~F",
+        "D~E",
+        "D~F",
+        "E~F"
+      ],
+      "stated_independencies": [
+        {
+          "x": "A",
+          "y": "C",
+          "given": [
+            "B"
+          ]
+        },
+        {
+          "x": "A",
+          "y": "C",
+          "given": [
+            "B",
+            "D"
+          ]
+        },
+        {
+          "x": "B",
+          "y": "D",
+          "given": [
+            "A"
+          ]
+        },
+        {
+          "x": "B",
+          "y": "D",
+          "given": [
+            "A",
+            "C"
+          ]
+        },
+        {
+          "x": "B",
+          "y": "D",
+          "given": [
+            "A",
+            "C",
+            "E"
+          ]
+        },
+        {
+          "x": "B",
+          "y": "D",
+          "given": [
+            "A",
+            "C",
+            "E",
+            "F"
+          ]
+        },
+        {
+          "x": "B",
+          "y": "D",
+          "given": [
+            "A",
+            "C",
+            "F"
+          ]
+        },
+        {
+          "x": "B",
+          "y": "D",
+          "given": [
+            "A",
+            "F"
+          ]
+        },
+        {
+          "x": "B",
+          "y": "E",
+          "given": [
+            "A",
+            "C"
+          ]
+        },
+        {
+          "x": "B",
+          "y": "E",
+          "given": [
+            "A",
+            "C",
+            "D"
+          ]
+        },
+        {
+          "x": "B",
+          "y": "E",
+          "given": [
+            "A",
+            "C",
+            "D",
+            "F"
+          ]
+        },
+        {
+          "x": "B",
+          "y": "E",
+          "given": [
+            "A",
+            "C",
+            "F"
+          ]
+        },
+        {
+          "x": "B",
+          "y": "F",
+          "given": [
+            "A",
+            "C"
+          ]
+        },
+        {
+          "x": "B",
+          "y": "F",
+          "given": [
+            "A",
+            "C",
+            "D"
+          ]
+        },
+        {
+          "x": "B",
+          "y": "F",
+          "given": [
+            "A",
+            "C",
+            "D",
+            "E"
+          ]
+        },
+        {
+          "x": "B",
+          "y": "F",
+          "given": [
+            "A",
+            "C",
+            "E"
+          ]
+        },
+        {
+          "x": "C",
+          "y": "D",
+          "given": [
+            "A"
+          ]
+        },
+        {
+          "x": "C",
+          "y": "D",
+          "given": [
+            "A",
+            "B"
+          ]
+        },
+        {
+          "x": "C",
+          "y": "D",
+          "given": [
+            "A",
+            "B",
+            "F"
+          ]
+        },
+        {
+          "x": "C",
+          "y": "D",
+          "given": [
+            "A",
+            "F"
+          ]
+        },
+        {
+          "x": "C",
+          "y": "D",
+          "given": [
+            "B"
+          ]
+        },
+        {
+          "x": "D",
+          "y": "F",
+          "given": [
+            "A"
+          ]
+        },
+        {
+          "x": "D",
+          "y": "F",
+          "given": [
+            "A",
+            "B"
+          ]
+        },
+        {
+          "x": "D",
+          "y": "F",
+          "given": [
+            "A",
+            "B",
+            "C"
+          ]
+        },
+        {
+          "x": "D",
+          "y": "F",
+          "given": [
+            "A",
+            "B",
+            "C",
+            "E"
+          ]
+        },
+        {
+          "x": "D",
+          "y": "F",
+          "given": [
+            "A",
+            "C"
+          ]
+        },
+        {
+          "x": "D",
+          "y": "F",
+          "given": [
+            "A",
+            "C",
+            "E"
+          ]
+        },
+        {
+          "x": "E",
+          "y": "F",
+          "given": [
+            "A",
+            "B",
+            "C"
+          ]
+        },
+        {
+          "x": "E",
+          "y": "F",
+          "given": [
+            "A",
+            "B",
+            "C",
+            "D"
+          ]
+        },
+        {
+          "x": "E",
+          "y": "F",
+          "given": [
+            "A",
+            "C"
+          ]
+        },
+        {
+          "x": "E",
+          "y": "F",
+          "given": [
+            "A",
+            "C",
+            "D"
+          ]
+        }
+      ],
+      "hypothesis": "A is a cause for E, but not a direct one.",
+      "equivalence_class_size": 4,
+      "members": [
+        {
+          "edges": [
+            "A->B",
+            "A->D",
+            "A->E",
+            "A->F",
+            "B->C",
+            "C->E",
+            "C->F",
+            "D->E"
+          ],
+          "hypothesis_holds": true
+        },
+        {
+          "edges": [
+            "A->B",
+            "A->E",
+            "A->F",
+            "B->C",
+            "C->E",
+            "C->F",
+            "D->A",
+            "D->E"
+          ],
+          "hypothesis_holds": true
+        },
+        {
+          "edges": [
+            "A->D",
+            "A->E",
+            "A->F",
+            "B->A",
+            "B->C",
+            "C->E",
+            "C->F",
+            "D->E"
+          ],
+          "hypothesis_holds": true
+        },
+        {
+          "edges": [
+            "A->D",
+            "A->E",
+            "A->F",
+            "B->A",
+            "C->B",
+            "C->E",
+            "C->F",
+            "D->E"
+          ],
+          "hypothesis_holds": true
+        }
+      ],
+      "holds_in": 4,
+      "derived_label": 1,
+      "gold_label": 0,
+      "gold_is_wrong": true,
+      "direction": "gold says not entailed, derivation says entailed"
+    },
+    {
+      "index": 950,
+      "template": "has_collider",
+      "num_variables": 6,
+      "premise_variables": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F"
+      ],
+      "stated_correlations": [
+        "A~B",
+        "A~C",
+        "A~D",
+        "A~E",
+        "A~F",
+        "B~C",
+        "B~D",
+        "B~E",
+        "B~F",
+        "C~D",
+        "C~E",
+        "C~F",
+        "D~E",
+        "D~F",
+        "E~F"
+      ],
+      "stated_independencies": [
+        {
+          "x": "A",
+          "y": "C",
+          "given": [
+            "B"
+          ]
+        },
+        {
+          "x": "A",
+          "y": "C",
+          "given": [
+            "B",
+            "D"
+          ]
+        },
+        {
+          "x": "B",
+          "y": "D",
+          "given": [
+            "A"
+          ]
+        },
+        {
+          "x": "B",
+          "y": "D",
+          "given": [
+            "A",
+            "C"
+          ]
+        },
+        {
+          "x": "B",
+          "y": "D",
+          "given": [
+            "A",
+            "C",
+            "E"
+          ]
+        },
+        {
+          "x": "B",
+          "y": "D",
+          "given": [
+            "A",
+            "C",
+            "E",
+            "F"
+          ]
+        },
+        {
+          "x": "B",
+          "y": "D",
+          "given": [
+            "A",
+            "C",
+            "F"
+          ]
+        },
+        {
+          "x": "B",
+          "y": "D",
+          "given": [
+            "A",
+            "F"
+          ]
+        },
+        {
+          "x": "B",
+          "y": "E",
+          "given": [
+            "A",
+            "C"
+          ]
+        },
+        {
+          "x": "B",
+          "y": "E",
+          "given": [
+            "A",
+            "C",
+            "D"
+          ]
+        },
+        {
+          "x": "B",
+          "y": "E",
+          "given": [
+            "A",
+            "C",
+            "D",
+            "F"
+          ]
+        },
+        {
+          "x": "B",
+          "y": "E",
+          "given": [
+            "A",
+            "C",
+            "F"
+          ]
+        },
+        {
+          "x": "B",
+          "y": "F",
+          "given": [
+            "A",
+            "C"
+          ]
+        },
+        {
+          "x": "B",
+          "y": "F",
+          "given": [
+            "A",
+            "C",
+            "D"
+          ]
+        },
+        {
+          "x": "B",
+          "y": "F",
+          "given": [
+            "A",
+            "C",
+            "D",
+            "E"
+          ]
+        },
+        {
+          "x": "B",
+          "y": "F",
+          "given": [
+            "A",
+            "C",
+            "E"
+          ]
+        },
+        {
+          "x": "C",
+          "y": "D",
+          "given": [
+            "A"
+          ]
+        },
+        {
+          "x": "C",
+          "y": "D",
+          "given": [
+            "A",
+            "B"
+          ]
+        },
+        {
+          "x": "C",
+          "y": "D",
+          "given": [
+            "A",
+            "B",
+            "F"
+          ]
+        },
+        {
+          "x": "C",
+          "y": "D",
+          "given": [
+            "A",
+            "F"
+          ]
+        },
+        {
+          "x": "C",
+          "y": "D",
+          "given": [
+            "B"
+          ]
+        },
+        {
+          "x": "D",
+          "y": "F",
+          "given": [
+            "A"
+          ]
+        },
+        {
+          "x": "D",
+          "y": "F",
+          "given": [
+            "A",
+            "B"
+          ]
+        },
+        {
+          "x": "D",
+          "y": "F",
+          "given": [
+            "A",
+            "B",
+            "C"
+          ]
+        },
+        {
+          "x": "D",
+          "y": "F",
+          "given": [
+            "A",
+            "B",
+            "C",
+            "E"
+          ]
+        },
+        {
+          "x": "D",
+          "y": "F",
+          "given": [
+            "A",
+            "C"
+          ]
+        },
+        {
+          "x": "D",
+          "y": "F",
+          "given": [
+            "A",
+            "C",
+            "E"
+          ]
+        },
+        {
+          "x": "E",
+          "y": "F",
+          "given": [
+            "A",
+            "B",
+            "C"
+          ]
+        },
+        {
+          "x": "E",
+          "y": "F",
+          "given": [
+            "A",
+            "B",
+            "C",
+            "D"
+          ]
+        },
+        {
+          "x": "E",
+          "y": "F",
+          "given": [
+            "A",
+            "C"
+          ]
+        },
+        {
+          "x": "E",
+          "y": "F",
+          "given": [
+            "A",
+            "C",
+            "D"
+          ]
+        }
+      ],
+      "hypothesis": "There exists at least one collider (i.e., common effect) of A and D.",
+      "equivalence_class_size": 4,
+      "members": [
+        {
+          "edges": [
+            "A->B",
+            "A->D",
+            "A->E",
+            "A->F",
+            "B->C",
+            "C->E",
+            "C->F",
+            "D->E"
+          ],
+          "hypothesis_holds": true
+        },
+        {
+          "edges": [
+            "A->B",
+            "A->E",
+            "A->F",
+            "B->C",
+            "C->E",
+            "C->F",
+            "D->A",
+            "D->E"
+          ],
+          "hypothesis_holds": true
+        },
+        {
+          "edges": [
+            "A->D",
+            "A->E",
+            "A->F",
+            "B->A",
+            "B->C",
+            "C->E",
+            "C->F",
+            "D->E"
+          ],
+          "hypothesis_holds": true
+        },
+        {
+          "edges": [
+            "A->D",
+            "A->E",
+            "A->F",
+            "B->A",
+            "C->B",
+            "C->E",
+            "C->F",
+            "D->E"
+          ],
+          "hypothesis_holds": true
+        }
+      ],
+      "holds_in": 4,
+      "derived_label": 1,
+      "gold_label": 0,
+      "gold_is_wrong": true,
+      "direction": "gold says not entailed, derivation says entailed"
+    },
+    {
+      "index": 1056,
+      "template": "parent",
+      "num_variables": 6,
+      "premise_variables": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F"
+      ],
+      "stated_correlations": [
+        "A~C",
+        "A~D",
+        "A~E",
+        "A~F",
+        "B~D",
+        "B~E",
+        "B~F",
+        "C~D",
+        "C~E",
+        "C~F",
+        "D~E",
+        "D~F",
+        "E~F"
+      ],
+      "stated_independencies": [
+        {
+          "x": "A",
+          "y": "B",
+          "given": []
+        },
+        {
+          "x": "A",
+          "y": "B",
+          "given": [
+            "C"
+          ]
+        },
+        {
+          "x": "B",
+          "y": "C",
+          "given": []
+        },
+        {
+          "x": "B",
+          "y": "C",
+          "given": [
+            "A"
+          ]
+        },
+        {
+          "x": "B",
+          "y": "F",
+          "given": [
+            "A",
+            "C",
+            "D",
+            "E"
+          ]
+        },
+        {
+          "x": "B",
+          "y": "F",
+          "given": [
+            "A",
+            "D",
+            "E"
+          ]
+        },
+        {
+          "x": "C",
+          "y": "E",
+          "given": [
+            "A",
+            "B",
+            "D"
+          ]
+        },
+        {
+          "x": "C",
+          "y": "E",
+          "given": [
+            "A",
+            "B",
+            "D",
+            "F"
+          ]
+        },
+        {
+          "x": "C",
+          "y": "F",
+          "given": [
+            "A",
+            "B",
+            "D"
+          ]
+        },
+        {
+          "x": "C",
+          "y": "F",
+          "given": [
+            "A",
+            "B",
+            "D",
+            "E"
+          ]
+        },
+        {
+          "x": "C",
+          "y": "F",
+          "given": [
+            "A",
+            "D",
+            "E"
+          ]
+        }
+      ],
+      "hypothesis": "B directly causes E.",
+      "equivalence_class_size": 2,
+      "members": [
+        {
+          "edges": [
+            "A->C",
+            "A->D",
+            "A->E",
+            "A->F",
+            "B->D",
+            "B->E",
+            "C->D",
+            "D->E",
+            "D->F",
+            "E->F"
+          ],
+          "hypothesis_holds": true
+        },
+        {
+          "edges": [
+            "A->D",
+            "A->E",
+            "A->F",
+            "B->D",
+            "B->E",
+            "C->A",
+            "C->D",
+            "D->E",
+            "D->F",
+            "E->F"
+          ],
+          "hypothesis_holds": true
+        }
+      ],
+      "holds_in": 2,
+      "derived_label": 1,
+      "gold_label": 0,
+      "gold_is_wrong": true,
+      "direction": "gold says not entailed, derivation says entailed"
+    },
+    {
+      "index": 1134,
+      "template": "parent",
+      "num_variables": 6,
+      "premise_variables": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F"
+      ],
+      "stated_correlations": [
+        "A~C",
+        "A~D",
+        "A~E",
+        "A~F",
+        "B~D",
+        "B~E",
+        "B~F",
+        "C~D",
+        "C~E",
+        "C~F",
+        "D~E",
+        "D~F",
+        "E~F"
+      ],
+      "stated_independencies": [
+        {
+          "x": "A",
+          "y": "B",
+          "given": []
+        },
+        {
+          "x": "A",
+          "y": "B",
+          "given": [
+            "C"
+          ]
+        },
+        {
+          "x": "B",
+          "y": "C",
+          "given": []
+        },
+        {
+          "x": "B",
+          "y": "C",
+          "given": [
+            "A"
+          ]
+        },
+        {
+          "x": "B",
+          "y": "F",
+          "given": [
+            "A",
+            "C",
+            "D",
+            "E"
+          ]
+        },
+        {
+          "x": "B",
+          "y": "F",
+          "given": [
+            "A",
+            "D",
+            "E"
+          ]
+        },
+        {
+          "x": "C",
+          "y": "E",
+          "given": [
+            "A",
+            "B",
+            "D"
+          ]
+        },
+        {
+          "x": "C",
+          "y": "E",
+          "given": [
+            "A",
+            "B",
+            "D",
+            "F"
+          ]
+        },
+        {
+          "x": "C",
+          "y": "F",
+          "given": [
+            "A",
+            "B",
+            "D"
+          ]
+        },
+        {
+          "x": "C",
+          "y": "F",
+          "given": [
+            "A",
+            "B",
+            "D",
+            "E"
+          ]
+        },
+        {
+          "x": "C",
+          "y": "F",
+          "given": [
+            "A",
+            "D",
+            "E"
+          ]
+        }
+      ],
+      "hypothesis": "A directly causes F.",
+      "equivalence_class_size": 2,
+      "members": [
+        {
+          "edges": [
+            "A->C",
+            "A->D",
+            "A->E",
+            "A->F",
+            "B->D",
+            "B->E",
+            "C->D",
+            "D->E",
+            "D->F",
+            "E->F"
+          ],
+          "hypothesis_holds": true
+        },
+        {
+          "edges": [
+            "A->D",
+            "A->E",
+            "A->F",
+            "B->D",
+            "B->E",
+            "C->A",
+            "C->D",
+            "D->E",
+            "D->F",
+            "E->F"
+          ],
+          "hypothesis_holds": true
+        }
+      ],
+      "holds_in": 2,
+      "derived_label": 1,
+      "gold_label": 0,
+      "gold_is_wrong": true,
+      "direction": "gold says not entailed, derivation says entailed"
+    },
+    {
+      "index": 920,
+      "template": "has_confounder",
+      "num_variables": 6,
+      "premise_variables": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F"
+      ],
+      "stated_correlations": [
+        "A~C",
+        "A~D",
+        "A~E",
+        "A~F",
+        "B~D",
+        "B~E",
+        "B~F",
+        "C~D",
+        "C~E",
+        "C~F",
+        "D~E",
+        "D~F",
+        "E~F"
+      ],
+      "stated_independencies": [
+        {
+          "x": "A",
+          "y": "B",
+          "given": []
+        },
+        {
+          "x": "A",
+          "y": "B",
+          "given": [
+            "C"
+          ]
+        },
+        {
+          "x": "B",
+          "y": "C",
+          "given": []
+        },
+        {
+          "x": "B",
+          "y": "C",
+          "given": [
+            "A"
+          ]
+        },
+        {
+          "x": "B",
+          "y": "F",
+          "given": [
+            "A",
+            "C",
+            "D",
+            "E"
+          ]
+        },
+        {
+          "x": "B",
+          "y": "F",
+          "given": [
+            "A",
+            "D",
+            "E"
+          ]
+        },
+        {
+          "x": "C",
+          "y": "E",
+          "given": [
+            "A",
+            "B",
+            "D"
+          ]
+        },
+        {
+          "x": "C",
+          "y": "E",
+          "given": [
+            "A",
+            "B",
+            "D",
+            "F"
+          ]
+        },
+        {
+          "x": "C",
+          "y": "F",
+          "given": [
+            "A",
+            "B",
+            "D"
+          ]
+        },
+        {
+          "x": "C",
+          "y": "F",
+          "given": [
+            "A",
+            "B",
+            "D",
+            "E"
+          ]
+        },
+        {
+          "x": "C",
+          "y": "F",
+          "given": [
+            "A",
+            "D",
+            "E"
+          ]
+        }
+      ],
+      "hypothesis": "There exists at least one confounder (i.e., common cause) of C and D.",
+      "equivalence_class_size": 2,
+      "members": [
+        {
+          "edges": [
+            "A->C",
+            "A->D",
+            "A->E",
+            "A->F",
+            "B->D",
+            "B->E",
+            "C->D",
+            "D->E",
+            "D->F",
+            "E->F"
+          ],
+          "hypothesis_holds": true
+        },
+        {
+          "edges": [
+            "A->D",
+            "A->E",
+            "A->F",
+            "B->D",
+            "B->E",
+            "C->A",
+            "C->D",
+            "D->E",
+            "D->F",
+            "E->F"
+          ],
+          "hypothesis_holds": false
+        }
+      ],
+      "holds_in": 1,
+      "derived_label": 0,
+      "gold_label": 1,
+      "gold_is_wrong": true,
+      "direction": "gold says entailed, derivation says not entailed"
+    },
+    {
+      "index": 983,
+      "template": "has_confounder",
+      "num_variables": 6,
+      "premise_variables": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F"
+      ],
+      "stated_correlations": [
+        "A~B",
+        "A~C",
+        "A~D",
+        "A~E",
+        "A~F",
+        "B~C",
+        "B~D",
+        "B~E",
+        "B~F",
+        "C~D",
+        "C~E",
+        "C~F",
+        "D~E",
+        "D~F",
+        "E~F"
+      ],
+      "stated_independencies": [
+        {
+          "x": "A",
+          "y": "C",
+          "given": [
+            "B"
+          ]
+        },
+        {
+          "x": "A",
+          "y": "C",
+          "given": [
+            "B",
+            "D"
+          ]
+        },
+        {
+          "x": "B",
+          "y": "D",
+          "given": [
+            "A"
+          ]
+        },
+        {
+          "x": "B",
+          "y": "D",
+          "given": [
+            "A",
+            "C"
+          ]
+        },
+        {
+          "x": "B",
+          "y": "D",
+          "given": [
+            "A",
+            "C",
+            "E"
+          ]
+        },
+        {
+          "x": "B",
+          "y": "D",
+          "given": [
+            "A",
+            "C",
+            "E",
+            "F"
+          ]
+        },
+        {
+          "x": "B",
+          "y": "D",
+          "given": [
+            "A",
+            "C",
+            "F"
+          ]
+        },
+        {
+          "x": "B",
+          "y": "D",
+          "given": [
+            "A",
+            "F"
+          ]
+        },
+        {
+          "x": "B",
+          "y": "E",
+          "given": [
+            "A",
+            "C"
+          ]
+        },
+        {
+          "x": "B",
+          "y": "E",
+          "given": [
+            "A",
+            "C",
+            "D"
+          ]
+        },
+        {
+          "x": "B",
+          "y": "E",
+          "given": [
+            "A",
+            "C",
+            "D",
+            "F"
+          ]
+        },
+        {
+          "x": "B",
+          "y": "E",
+          "given": [
+            "A",
+            "C",
+            "F"
+          ]
+        },
+        {
+          "x": "B",
+          "y": "F",
+          "given": [
+            "A",
+            "C"
+          ]
+        },
+        {
+          "x": "B",
+          "y": "F",
+          "given": [
+            "A",
+            "C",
+            "D"
+          ]
+        },
+        {
+          "x": "B",
+          "y": "F",
+          "given": [
+            "A",
+            "C",
+            "D",
+            "E"
+          ]
+        },
+        {
+          "x": "B",
+          "y": "F",
+          "given": [
+            "A",
+            "C",
+            "E"
+          ]
+        },
+        {
+          "x": "C",
+          "y": "D",
+          "given": [
+            "A"
+          ]
+        },
+        {
+          "x": "C",
+          "y": "D",
+          "given": [
+            "A",
+            "B"
+          ]
+        },
+        {
+          "x": "C",
+          "y": "D",
+          "given": [
+            "A",
+            "B",
+            "F"
+          ]
+        },
+        {
+          "x": "C",
+          "y": "D",
+          "given": [
+            "A",
+            "F"
+          ]
+        },
+        {
+          "x": "C",
+          "y": "D",
+          "given": [
+            "B"
+          ]
+        },
+        {
+          "x": "D",
+          "y": "F",
+          "given": [
+            "A"
+          ]
+        },
+        {
+          "x": "D",
+          "y": "F",
+          "given": [
+            "A",
+            "B"
+          ]
+        },
+        {
+          "x": "D",
+          "y": "F",
+          "given": [
+            "A",
+            "B",
+            "C"
+          ]
+        },
+        {
+          "x": "D",
+          "y": "F",
+          "given": [
+            "A",
+            "B",
+            "C",
+            "E"
+          ]
+        },
+        {
+          "x": "D",
+          "y": "F",
+          "given": [
+            "A",
+            "C"
+          ]
+        },
+        {
+          "x": "D",
+          "y": "F",
+          "given": [
+            "A",
+            "C",
+            "E"
+          ]
+        },
+        {
+          "x": "E",
+          "y": "F",
+          "given": [
+            "A",
+            "B",
+            "C"
+          ]
+        },
+        {
+          "x": "E",
+          "y": "F",
+          "given": [
+            "A",
+            "B",
+            "C",
+            "D"
+          ]
+        },
+        {
+          "x": "E",
+          "y": "F",
+          "given": [
+            "A",
+            "C"
+          ]
+        },
+        {
+          "x": "E",
+          "y": "F",
+          "given": [
+            "A",
+            "C",
+            "D"
+          ]
+        }
+      ],
+      "hypothesis": "There exists at least one confounder (i.e., common cause) of D and E.",
+      "equivalence_class_size": 4,
+      "members": [
+        {
+          "edges": [
+            "A->B",
+            "A->D",
+            "A->E",
+            "A->F",
+            "B->C",
+            "C->E",
+            "C->F",
+            "D->E"
+          ],
+          "hypothesis_holds": true
+        },
+        {
+          "edges": [
+            "A->B",
+            "A->E",
+            "A->F",
+            "B->C",
+            "C->E",
+            "C->F",
+            "D->A",
+            "D->E"
+          ],
+          "hypothesis_holds": false
+        },
+        {
+          "edges": [
+            "A->D",
+            "A->E",
+            "A->F",
+            "B->A",
+            "B->C",
+            "C->E",
+            "C->F",
+            "D->E"
+          ],
+          "hypothesis_holds": true
+        },
+        {
+          "edges": [
+            "A->D",
+            "A->E",
+            "A->F",
+            "B->A",
+            "C->B",
+            "C->E",
+            "C->F",
+            "D->E"
+          ],
+          "hypothesis_holds": true
+        }
+      ],
+      "holds_in": 3,
+      "derived_label": 0,
+      "gold_label": 1,
+      "gold_is_wrong": true,
+      "direction": "gold says entailed, derivation says not entailed"
+    },
+    {
+      "index": 984,
+      "template": "has_confounder",
+      "num_variables": 6,
+      "premise_variables": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F"
+      ],
+      "stated_correlations": [
+        "A~B",
+        "A~C",
+        "A~D",
+        "A~E",
+        "A~F",
+        "B~C",
+        "B~D",
+        "B~E",
+        "B~F",
+        "C~D",
+        "C~E",
+        "C~F",
+        "D~E",
+        "D~F",
+        "E~F"
+      ],
+      "stated_independencies": [
+        {
+          "x": "A",
+          "y": "C",
+          "given": [
+            "B"
+          ]
+        },
+        {
+          "x": "A",
+          "y": "C",
+          "given": [
+            "B",
+            "D"
+          ]
+        },
+        {
+          "x": "B",
+          "y": "D",
+          "given": [
+            "A"
+          ]
+        },
+        {
+          "x": "B",
+          "y": "D",
+          "given": [
+            "A",
+            "C"
+          ]
+        },
+        {
+          "x": "B",
+          "y": "D",
+          "given": [
+            "A",
+            "C",
+            "E"
+          ]
+        },
+        {
+          "x": "B",
+          "y": "D",
+          "given": [
+            "A",
+            "C",
+            "E",
+            "F"
+          ]
+        },
+        {
+          "x": "B",
+          "y": "D",
+          "given": [
+            "A",
+            "C",
+            "F"
+          ]
+        },
+        {
+          "x": "B",
+          "y": "D",
+          "given": [
+            "A",
+            "F"
+          ]
+        },
+        {
+          "x": "B",
+          "y": "E",
+          "given": [
+            "A",
+            "C"
+          ]
+        },
+        {
+          "x": "B",
+          "y": "E",
+          "given": [
+            "A",
+            "C",
+            "D"
+          ]
+        },
+        {
+          "x": "B",
+          "y": "E",
+          "given": [
+            "A",
+            "C",
+            "D",
+            "F"
+          ]
+        },
+        {
+          "x": "B",
+          "y": "E",
+          "given": [
+            "A",
+            "C",
+            "F"
+          ]
+        },
+        {
+          "x": "B",
+          "y": "F",
+          "given": [
+            "A",
+            "C"
+          ]
+        },
+        {
+          "x": "B",
+          "y": "F",
+          "given": [
+            "A",
+            "C",
+            "D"
+          ]
+        },
+        {
+          "x": "B",
+          "y": "F",
+          "given": [
+            "A",
+            "C",
+            "D",
+            "E"
+          ]
+        },
+        {
+          "x": "B",
+          "y": "F",
+          "given": [
+            "A",
+            "C",
+            "E"
+          ]
+        },
+        {
+          "x": "C",
+          "y": "D",
+          "given": [
+            "A"
+          ]
+        },
+        {
+          "x": "C",
+          "y": "D",
+          "given": [
+            "A",
+            "B"
+          ]
+        },
+        {
+          "x": "C",
+          "y": "D",
+          "given": [
+            "A",
+            "B",
+            "F"
+          ]
+        },
+        {
+          "x": "C",
+          "y": "D",
+          "given": [
+            "A",
+            "F"
+          ]
+        },
+        {
+          "x": "C",
+          "y": "D",
+          "given": [
+            "B"
+          ]
+        },
+        {
+          "x": "D",
+          "y": "F",
+          "given": [
+            "A"
+          ]
+        },
+        {
+          "x": "D",
+          "y": "F",
+          "given": [
+            "A",
+            "B"
+          ]
+        },
+        {
+          "x": "D",
+          "y": "F",
+          "given": [
+            "A",
+            "B",
+            "C"
+          ]
+        },
+        {
+          "x": "D",
+          "y": "F",
+          "given": [
+            "A",
+            "B",
+            "C",
+            "E"
+          ]
+        },
+        {
+          "x": "D",
+          "y": "F",
+          "given": [
+            "A",
+            "C"
+          ]
+        },
+        {
+          "x": "D",
+          "y": "F",
+          "given": [
+            "A",
+            "C",
+            "E"
+          ]
+        },
+        {
+          "x": "E",
+          "y": "F",
+          "given": [
+            "A",
+            "B",
+            "C"
+          ]
+        },
+        {
+          "x": "E",
+          "y": "F",
+          "given": [
+            "A",
+            "B",
+            "C",
+            "D"
+          ]
+        },
+        {
+          "x": "E",
+          "y": "F",
+          "given": [
+            "A",
+            "C"
+          ]
+        },
+        {
+          "x": "E",
+          "y": "F",
+          "given": [
+            "A",
+            "C",
+            "D"
+          ]
+        }
+      ],
+      "hypothesis": "There exists at least one confounder (i.e., common cause) of D and F.",
+      "equivalence_class_size": 4,
+      "members": [
+        {
+          "edges": [
+            "A->B",
+            "A->D",
+            "A->E",
+            "A->F",
+            "B->C",
+            "C->E",
+            "C->F",
+            "D->E"
+          ],
+          "hypothesis_holds": true
+        },
+        {
+          "edges": [
+            "A->B",
+            "A->E",
+            "A->F",
+            "B->C",
+            "C->E",
+            "C->F",
+            "D->A",
+            "D->E"
+          ],
+          "hypothesis_holds": false
+        },
+        {
+          "edges": [
+            "A->D",
+            "A->E",
+            "A->F",
+            "B->A",
+            "B->C",
+            "C->E",
+            "C->F",
+            "D->E"
+          ],
+          "hypothesis_holds": true
+        },
+        {
+          "edges": [
+            "A->D",
+            "A->E",
+            "A->F",
+            "B->A",
+            "C->B",
+            "C->E",
+            "C->F",
+            "D->E"
+          ],
+          "hypothesis_holds": true
+        }
+      ],
+      "holds_in": 3,
+      "derived_label": 0,
+      "gold_label": 1,
+      "gold_is_wrong": true,
+      "direction": "gold says entailed, derivation says not entailed"
+    }
+  ]
+}
