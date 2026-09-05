@@ -64,7 +64,11 @@ def fetch_split():
     if len(rows) != EXPECT_ROWS:
         print("WARNING: got %d rows, the audit was run against %d. Upstream may have moved."
               % (len(rows), EXPECT_ROWS), file=sys.stderr)
-    io.open(SPLIT, "w", encoding="utf-8").write(
+    # newline="\n" so the file is byte-identical on every platform. Without it Windows
+    # translates to CRLF and the sha256 verify_split.py prints -- offered as a provenance
+    # fingerprint -- differs between machines for the same upstream bytes. Caught by running
+    # this deposit in a Linux container: the verdicts matched, the hash did not.
+    io.open(SPLIT, "w", encoding="utf-8", newline="\n").write(
         json.dumps({"revision": REV, "rows": rows}, indent=1))
     print("  wrote %s  (%d rows)" % (os.path.basename(SPLIT), len(rows)))
 

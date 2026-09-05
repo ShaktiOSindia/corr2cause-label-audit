@@ -29,6 +29,11 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 SPLIT = os.path.join(HERE, "corr2cause_test_FULL1162.json")
 DERIV = os.path.join(HERE, "derivations_18_disputed.json")
 
+# The bytes the audit was run against. Byte-identical on Windows/Python 3.11 and
+# Linux/Python 3.12 -- which was NOT true until a container run showed the two hashes
+# differing for the same upstream data, and fetch_data.py pinned the newline.
+EXPECT_SHA256 = "049027e120d2a57204490d7886c8389dc6b453e6663efdc4c031fdc0ae552d5d"
+
 EXPECT_TEMPLATES = {
     "parent": 194, "child": 194, "has_collider": 193, "has_confounder": 193,
     "non-child descendant": 193, "non-parent ancestor": 195,
@@ -82,8 +87,18 @@ def main():
     else:
         print("\n(derivations_18_disputed.json absent; skipping the item-level tie-back)")
 
+    # A fingerprint that is only printed tells you nothing; this one is checked.
     body = io.open(SPLIT, "rb").read()
-    print("\nfetched split sha256: %s" % hashlib.sha256(body).hexdigest())
+    digest = hashlib.sha256(body).hexdigest()
+    print("\nfetched split sha256: %s" % digest)
+    if digest == EXPECT_SHA256:
+        print("  matches the file the audit was run against, byte for byte")
+    else:
+        print("  DOES NOT match the expected %s" % EXPECT_SHA256)
+        print("  The content checks above may still pass, in which case this is most likely a")
+        print("  formatting change rather than a changed label -- but say so if you report")
+        print("  results against it.")
+        ok = False
     print("\n%s" % ("SPLIT VERIFIED: this is the data the audit was run against."
                     if ok else
                     "SPLIT DOES NOT MATCH. Do not report results against it without saying so."))

@@ -1,3 +1,5 @@
+# Python 3.9 or newer. Verified end-to-end on 3.11 (Windows) and 3.12 (Linux container),
+# which produce a byte-identical fetched split -- verify_split.py checks its sha256.
 # Minimum to run the adjudication and export the derivations.
 networkx>=3.0
 datasets>=2.14.0
