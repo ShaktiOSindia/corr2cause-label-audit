@@ -58,6 +58,12 @@ refutes a gold label.
 | `verify_split.py` | confirms the fetched data is what the audit used |
 | `generate_p1_figures.py` | the figure generator, shipped as released code — read its header |
 
+`adjudicate_independent_full.py` is shipped **unmodified**, which is the point of it — you are
+reading the file that produced the result, not a tidied version. Two consequences: its
+docstring records how it was wrong twice before it was right, which is worth reading; and it
+refers to an internal verification record (`VERIFICATION_2026-08-25.md`) that is not in this
+deposit. Those pointers will not resolve here. The claims they support are in the paper.
+
 ## What is not here, and why
 
 **No Corr2Cause data files.** The Corr2Cause GitHub repository is MIT licensed, but the HuggingFace
@@ -80,5 +86,6 @@ is redistributed here.
 MIT — see `LICENSE`. This matches the licence of the Corr2Cause repository the underlying data
 comes from. The derived labels are released on the assumption that the repository's licence
 governs the data it generated; if the authors intend different terms for the distributed
-dataset, we will follow them, and we have raised the undeclared dataset-card licence with them
-so that it need not stay an assumption.
+dataset, we will follow them. We intend to ask them to declare a licence on the dataset card,
+so that it need not stay an assumption for anyone — that request is drafted and not yet sent,
+and this sentence will be updated when it is.
