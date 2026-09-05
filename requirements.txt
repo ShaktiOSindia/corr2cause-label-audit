@@ -1,5 +1,12 @@
 # Python 3.9 or newer. Verified end-to-end on 3.11 (Windows) and 3.12 (Linux container),
 # which produce a byte-identical fetched split -- verify_split.py checks its sha256.
-# Minimum to run the adjudication and export the derivations.
+
+# The Corr2Cause adjudication (fetch_data.py, verify_split.py,
+# adjudicate_independent_full.py, export_derivations.py):
 networkx>=3.0
 datasets>=2.14.0
+
+# The y0 case study (napkin_refutation.py) only. y0 is the library under test, installed
+# from PyPI rather than redistributed here; numpy is for the Monte-Carlo arm.
+y0>=0.2.11
+numpy>=1.26.0

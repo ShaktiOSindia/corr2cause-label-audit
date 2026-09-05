@@ -57,6 +57,31 @@ refutes a gold label.
 | `fetch_data.py` | fetches the test split at its pinned revision |
 | `verify_split.py` | confirms the fetched data is what the audit used |
 | `generate_p1_figures.py` | the figure generator, shipped as released code — read its header |
+| `napkin_refutation.py` | the y0 case study, including the positive control (see below) |
+| `engine/core/` | the two modules that script imports — `identification.py` wraps y0's ID algorithm, `evaluation.py` evaluates an estimand against an enumerated joint |
+
+## The second case study: y0's napkin estimand
+
+`python napkin_refutation.py` — needs `y0` and `numpy`, not the Corr2Cause data.
+
+y0 0.2.11 returns `P(Y | X)` for the napkin graph. Issue #372 reports this; the thread's
+February 2026 conclusion is that **both** that and the ratio form are correct. They are not,
+and the script settles it with a positive control rather than an argument — in one binary SCM,
+enumerated exactly:
+
+| estimand | value | error |
+|---|---|---|
+| true `P(Y=1\|do(X=1))` | 0.825000 | — |
+| **the ratio estimand issue #372 states** | **0.825000** | **1.1e-16** |
+| y0's `P(Y \| X)` | 0.842681 | 0.017681 |
+
+The correct estimand recovers the truth to floating point *in the same model* where y0's does
+not — which rules out the model, the enumerator and this code as the cause. It returns the
+identical value conditioning on either value of `Z1`, so the thread's invariance observation is
+right; what does not follow is that `P(Y | X)` is also correct. On a continuous napkin whose
+true effect is **3.0 by construction**, `P(Y | X)` gives **4.48** — 49% error at 494 standard
+errors. The gap scales with the confounding, and y0's own napkin simulator leaves almost none,
+which is a sufficient explanation for a numerical check finding the two equal.
 
 `adjudicate_independent_full.py` is shipped **unmodified**, which is the point of it — you are
 reading the file that produced the result, not a tidied version. Two consequences: its
