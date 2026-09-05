@@ -5,7 +5,11 @@ label errors in Corr2Cause and unsound estimands in y0*.
 
 This deposit contains what the paper's §10 releases: **the adjudication code, the per-item
 derivations for every disputed item, and the figure generator.** It is deliberately small.
-It is not the research repository, and it redistributes no third-party data.
+It is not the research repository, and it ships none of the Corr2Cause data files — see
+[What is not here, and why](#what-is-not-here-and-why). The derivations do quote each disputed
+item's **hypothesis sentence**, because a derivation you cannot read the question of is not a
+derivation; that is 18 sentences, and it is part of what §10 releases. The premise text is not
+included — only the variables, correlations and independencies parsed from it.
 
 ## The claim you can check here
 
@@ -56,7 +60,7 @@ refutes a gold label.
 
 ## What is not here, and why
 
-**No third-party data.** The Corr2Cause GitHub repository is MIT licensed, but the HuggingFace
+**No Corr2Cause data files.** The Corr2Cause GitHub repository is MIT licensed, but the HuggingFace
 dataset card that people actually download **declares no licence at all** — its body is the
 word `TODO`. A redistributor cannot determine the terms from the artefact itself, so this
 deposit redistributes none of it and fetches at a pinned revision instead. That is also better
